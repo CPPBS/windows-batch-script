@@ -1,10 +1,10 @@
-@echo off
-echo "¿ªÊ¼´¦Àí..."
+ï»¿@echo off
+echo "å¼€å§‹å¤„ç†..."
 
 for /R %%i in (*.png) do (
   move "%%i" "%temp%\temp.png"
   pngquant  - < "%temp%\temp.png" > "%%i"
-  echo "³É¹¦"
+  echo "æˆåŠŸ"
 )
 
 pause

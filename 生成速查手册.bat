@@ -1,19 +1,19 @@
-@echo off & setlocal EnableDelayedExpansion
+ï»¿@echo off & setlocal EnableDelayedExpansion
 echo.========================================
 
-REM À´Ô´£ºhttps://www.jb51.net/article/25960.htm
+REM æ¥æºï¼šhttps://www.jb51.net/article/25960.htm
 
-echo ¿ªÊ¼´´½¨¡¶CMDÃüÁîËÙ²éÊÖ²á¡·£¬ÇëÉÔºò¡­¡­
-echo ´´½¨ÍøÒ³ÎÄ¼şÍ·¡­¡­
+echo å¼€å§‹åˆ›å»ºã€ŠCMDå‘½ä»¤é€ŸæŸ¥æ‰‹å†Œã€‹ï¼Œè¯·ç¨å€™â€¦â€¦
+echo åˆ›å»ºç½‘é¡µæ–‡ä»¶å¤´â€¦â€¦
 >CMDHelp.htm echo ^<head^>
->>CMDHelp.htm echo ^<title^>CMDÃüÁîËÙ²éÊÖ²á^</title^>
+>>CMDHelp.htm echo ^<title^>CMDå‘½ä»¤é€ŸæŸ¥æ‰‹å†Œ^</title^>
 >>CMDHelp.htm echo ^<meta http-equiv="Content-Type" content="text/html^; charset=gb2312" ^/^>
 >>CMDHelp.htm echo ^</head^>
 >>CMDHelp.htm echo ^<A NAME="Top"^>
->>CMDHelp.htm echo ^<center^>^<h1^>CMD ÃüÁîËÙ²éÊÖ²á^</h1^>%username% - %date%^</center^>^<br^>
+>>CMDHelp.htm echo ^<center^>^<h1^>CMD å‘½ä»¤é€ŸæŸ¥æ‰‹å†Œ^</h1^>%username% - %date%^</center^>^<br^>
 >>CMDHelp.htm echo ^<table^>
 
-echo ´´½¨°ïÖúÄ¿Â¼¡­¡­
+echo åˆ›å»ºå¸®åŠ©ç›®å½•â€¦â€¦
 for /f "delims=:" %%f in ('help^|findstr /n "^ASSOC"') do set head=%%f
 set /a head-=1
 if "%head%"=="0" (set head=) else set head=skip=%head%
@@ -22,14 +22,14 @@ set str=%%i & set name=!str:~0,9! & set desc=!str:~9!
 echo.!name! | findstr /v "^[A-Z]" >nul && echo !desc! >>CMDHelp.htm
 if errorlevel 1 echo ^</td^>^</tr^>^<tr^>^<td^>^<a href="#!name!"^>!name!^</a^>^</td^>^<td^>^ ^ ^ !desc!>>CMDHelp.htm
 )
->>CMDHelp.htm echo ^</td^>^</tr^>^</table^>^<br^>^<a href="#top"^>·µ»ØÒ³Ê×^</a^>^<br^>
+>>CMDHelp.htm echo ^</td^>^</tr^>^</table^>^<br^>^<a href="#top"^>è¿”å›é¡µé¦–^</a^>^<br^>
 
-echo ´´½¨°ïÖúÕıÎÄ¡­¡­
+echo åˆ›å»ºå¸®åŠ©æ­£æ–‡â€¦â€¦
 cscript //h:cscript //b
 for /f %%i in ('help^|findstr "^[A-Z]"') do (
 >>CMDHelp.htm echo ^<a name="%%i"^>^<h2^>%%i^</h2^>^<pre^>
-echo ÕıÔÚ´´½¨ %%i µÄ°ïÖúÕıÎÄÖĞ¡­¡­
-if /I "%%i"=="SC" echo Çë°´Y¼ü¼ÌĞø¡­¡­
+echo æ­£åœ¨åˆ›å»º %%i çš„å¸®åŠ©æ­£æ–‡ä¸­â€¦â€¦
+if /I "%%i"=="SC" echo è¯·æŒ‰Yé”®ç»§ç»­â€¦â€¦
 help %%i | findstr "<.*>" >nul
 if not errorlevel 1 (
 for /f "delims=" %%a in ('help %%i') do (
@@ -37,10 +37,10 @@ set st=%%a & set st=!st:^<=^&lt;! & set st=!st:^>=^&gt;!
 echo !st!>> CMDHelp.htm
 )
 ) else help %%i>>CMDHelp.htm
->>CMDHelp.htm echo ^</pre^>^<a href="#top"^>·µ»ØÒ³Ê×^</a^>^<br^>^<br^>
+>>CMDHelp.htm echo ^</pre^>^<a href="#top"^>è¿”å›é¡µé¦–^</a^>^<br^>^<br^>
 )
 
 
-echo ¡¶CMDÃüÁîËÙ²éÊÖ²á¡·´´½¨Íê±Ï£¬ÈÎÒâ¼ü´ò¿ª
+echo ã€ŠCMDå‘½ä»¤é€ŸæŸ¥æ‰‹å†Œã€‹åˆ›å»ºå®Œæ¯•ï¼Œä»»æ„é”®æ‰“å¼€
 echo.========================================
 pause>nul && start CMDHelp.htm

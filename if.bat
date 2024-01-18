@@ -1,4 +1,4 @@
-@echo off
+﻿@echo off
 
 if 1 == 2 (
 	echo yes

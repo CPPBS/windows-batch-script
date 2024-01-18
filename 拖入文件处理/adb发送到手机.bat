@@ -1,39 +1,39 @@
-@echo off
+ï»¿@echo off
 setlocal enabledelayedexpansion
 
-:: ×÷Õß£ºHaujet Zhao
-:: ÈÕÆÚ£º2021 Äê 2 ÔÂ 10 ÈÕ
-:: ÔËĞĞ´Ë½Å±¾ĞèÒªÏÈÈ·±£°²×°ÓĞ£ºadb
+:: ä½œè€…ï¼šHaujet Zhao
+:: æ—¥æœŸï¼š2021 å¹´ 2 æœˆ 10 æ—¥
+:: è¿è¡Œæ­¤è„šæœ¬éœ€è¦å…ˆç¡®ä¿å®‰è£…æœ‰ï¼šadb
 
-REM Â·¾¶ºóÃæ¼ÇµÃ²»Òª¼ÓĞ±¸Ü
-set Ä¿±êÂ·¾¶=/sdcard/_µçÄÔ´«Êä
+REM è·¯å¾„åé¢è®°å¾—ä¸è¦åŠ æ–œæ 
+set ç›®æ ‡è·¯å¾„=/sdcard/_ç”µè„‘ä¼ è¾“
 
-echo Ä¿±êÂ·¾¶£º%Ä¿±êÂ·¾¶%
+echo ç›®æ ‡è·¯å¾„ï¼š%ç›®æ ‡è·¯å¾„%
 echo=
 
-set ÓĞÁ¬½Ó=False
-for /F "tokens=* skip=1" %%i in ('adb devices') do set ÓĞÁ¬½Ó=True
+set æœ‰è¿æ¥=False
+for /F "tokens=* skip=1" %%i in ('adb devices') do set æœ‰è¿æ¥=True
 
 set n=10
 set str=abcdefghijklmnopqrstuvwxyz0123456789
 for /l %%a in (1,1,%n%) do call :slz "%%a"
 
-if  %ÓĞÁ¬½Ó%==True (
+if  %æœ‰è¿æ¥%==True (
 	for %%i in (%*) do (
-		set Ô­À´Ãû×Ö=%%~nxi
-		set Õı¾­Â·¾¶=%Ä¿±êÂ·¾¶%/!Ô­À´Ãû×Ö!
+		set åŸæ¥åå­—=%%~nxi
+		set æ­£ç»è·¯å¾„=%ç›®æ ‡è·¯å¾„%/!åŸæ¥åå­—!
 		
-		set Ëæ»úÎÄ¼şÃûÂ·¾¶=%Ä¿±êÂ·¾¶%/!random_str!
-		adb push %%i "!Ëæ»úÎÄ¼şÃûÂ·¾¶!"
-		adb shell "mv ""!Ëæ»úÎÄ¼şÃûÂ·¾¶!"" ""!Õı¾­Â·¾¶!"""
+		set éšæœºæ–‡ä»¶åè·¯å¾„=%ç›®æ ‡è·¯å¾„%/!random_str!
+		adb push %%i "!éšæœºæ–‡ä»¶åè·¯å¾„!"
+		adb shell "mv ""!éšæœºæ–‡ä»¶åè·¯å¾„!"" ""!æ­£ç»è·¯å¾„!"""
 	)
 ) else (
-	echo ÎŞÁ¬½Ó
+	echo æ— è¿æ¥
 )
 
 echo=
 
-rem ============ÏÂÃæÊÇº¯ÊıÇø==============================
+rem ============ä¸‹é¢æ˜¯å‡½æ•°åŒº==============================
 goto end
 
 :slz

@@ -1,43 +1,43 @@
-@echo off
+ï»¿@echo off
 setlocal enabledelayedexpansion
 
-:: ×÷Õß£ºHaujet Zhao
-:: ÈÕÆÚ£º2021 Äê 2 ÔÂ 14 ÈÕ
-:: ×÷ÓÃ£º½«±¾ÎÄ¼ş¼ĞÄÚµÄ ncm ÎÄ¼ş×ªÎª mp3 ÒôÆµ
-::       £¬×ª»»Íê³ÉºóÔ­ÓĞµÄ ncm ÎÄ¼ş»á±»É¾³ı
+:: ä½œè€…ï¼šHaujet Zhao
+:: æ—¥æœŸï¼š2021 å¹´ 2 æœˆ 14 æ—¥
+:: ä½œç”¨ï¼šå°†æœ¬æ–‡ä»¶å¤¹å†…çš„ ncm æ–‡ä»¶è½¬ä¸º mp3 éŸ³é¢‘
+::       ï¼Œè½¬æ¢å®ŒæˆååŸæœ‰çš„ ncm æ–‡ä»¶ä¼šè¢«åˆ é™¤
 
-:: ÔËĞĞ´Ë½Å±¾ĞèÒªÏÈÈ·±£°²×°ÓĞ£ºPython¡¢ncmdump
+:: è¿è¡Œæ­¤è„šæœ¬éœ€è¦å…ˆç¡®ä¿å®‰è£…æœ‰ï¼šPythonã€ncmdump
 
-:: ncmdump Ô´ÂëµØÖ·£ºhttps://github.com/anonymous5l/ncmdump
-:: ncmdump Python ÊµÏÖµÄÔ´Âë²Ö¿â£ºhttps://github.com/nondanee/ncmdump
+:: ncmdump æºç åœ°å€ï¼šhttps://github.com/anonymous5l/ncmdump
+:: ncmdump Python å®ç°çš„æºç ä»“åº“ï¼šhttps://github.com/nondanee/ncmdump
 
-:: pip °²×° ncmdump ÃüÁî£ºpip install git+https://github.com/anonymous5l/ncmdump.git
+:: pip å®‰è£… ncmdump å‘½ä»¤ï¼špip install git+https://github.com/anonymous5l/ncmdump.git
 
-:: ÆäÊµÊÇ¿ÉÒÔÊ¹ÓÃ ncmdump µÄ -d Ñ¡ÏîÉ¾³ıÊäÈëÎÄ¼şµÄ
-:: µ«ÊÇÎªÁË·½±ã¸ÄĞ´½Å±¾ÊÊÓ¦ÆäËü³ÌĞò
-:: ÕâÀïÊ¹ÓÃÊÖ¶¯É¾³ıÊäÈëÎÄ¼şµÄ·½Ê½
+:: å…¶å®æ˜¯å¯ä»¥ä½¿ç”¨ ncmdump çš„ -d é€‰é¡¹åˆ é™¤è¾“å…¥æ–‡ä»¶çš„
+:: ä½†æ˜¯ä¸ºäº†æ–¹ä¾¿æ”¹å†™è„šæœ¬é€‚åº”å…¶å®ƒç¨‹åº
+:: è¿™é‡Œä½¿ç”¨æ‰‹åŠ¨åˆ é™¤è¾“å…¥æ–‡ä»¶çš„æ–¹å¼
 
-set ×ª»¯Íê³ÉºóÉ¾³ıÔ­ÎÄ¼ş=True
+set è½¬åŒ–å®Œæˆååˆ é™¤åŸæ–‡ä»¶=True
 
 for /R %%i in (*.ncm) do (
-	set ÊäÈëÎÄ¼şÂ·¾¶=%%~dpi
-	set ÊäÈëÎÄ¼şÃû=%%~ni
-	set ÊäÈëÎÄ¼şÍØÕ¹Ãû=%%~xi
+	set è¾“å…¥æ–‡ä»¶è·¯å¾„=%%~dpi
+	set è¾“å…¥æ–‡ä»¶å=%%~ni
+	set è¾“å…¥æ–‡ä»¶æ‹“å±•å=%%~xi
 	
-	set È«¾ÖÑ¡Ïî=
+	set å…¨å±€é€‰é¡¹=
 	
-	set ÊäÈëÎÄ¼ş="%%~i"
+	set è¾“å…¥æ–‡ä»¶="%%~i"
 	
-	set ÃüÁî=ncmdump !È«¾ÖÑ¡Ïî! !ÊäÈëÎÄ¼ş! 
+	set å‘½ä»¤=ncmdump !å…¨å±€é€‰é¡¹! !è¾“å…¥æ–‡ä»¶! 
 	
 	echo=
-	echo !ÃüÁî!
+	echo !å‘½ä»¤!
 	
-	!ÃüÁî!
+	!å‘½ä»¤!
 	
-	if %×ª»¯Íê³ÉºóÉ¾³ıÔ­ÎÄ¼ş% == True (
-		echo É¾³ı !ÊäÈëÎÄ¼ş!
-		del !ÊäÈëÎÄ¼ş!
+	if %è½¬åŒ–å®Œæˆååˆ é™¤åŸæ–‡ä»¶% == True (
+		echo åˆ é™¤ !è¾“å…¥æ–‡ä»¶!
+		del !è¾“å…¥æ–‡ä»¶!
 	)
 )
 

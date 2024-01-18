@@ -1,7 +1,7 @@
-@echo off
+ï»¿@echo off
 setlocal enabledelayedexpansion
 
-echo ¿ªÊ¼´¦Àí£¨Start Processing£©
+echo å¼€å§‹å¤„ç†ï¼ˆStart Processingï¼‰
 
 for /R %%i in (*.wav) do (
 	set target=%%i
@@ -11,6 +11,6 @@ for /R %%i in (*.wav) do (
 	ffmpeg -hide_banner -i "%%i" -b:a 320k -ar 44100 "!target!"
 )
 
-echo . && echo . && echo . && echo Íê³É£¨Finished£© && echo . && echo . && echo . 
+echo . && echo . && echo . && echo å®Œæˆï¼ˆFinishedï¼‰ && echo . && echo . && echo . 
 pause
 

@@ -1,13 +1,13 @@
-@echo off
+ï»¿@echo off
 setlocal enabledelayedexpansion
 
-echo ¿ªÊ¼´¦Àí£¨Start Processing£©
+echo å¼€å§‹å¤„ç†ï¼ˆStart Processingï¼‰
 
 for /R %%i in (*.mp4) do (
 	set ext=_transcoded.mp4
 	ffmpeg -hide_banner -i "%%~fi" -c copy -metadata:s:v:0 rotate=90 "%%~di%%~pi%%~ni!ext!"
 )
 
-echo . && echo . && echo . && echo Íê³É£¨Finished£© && echo . && echo . && echo . 
+echo . && echo . && echo . && echo å®Œæˆï¼ˆFinishedï¼‰ && echo . && echo . && echo . 
 pause
 

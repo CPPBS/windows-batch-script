@@ -1,40 +1,40 @@
-@echo off
+ï»¿@echo off
 setlocal enabledelayedexpansion
 
-REM ¼ì²éÊÇ·ñÌá¹©ÁËÊäÈëÎÄ¼ş
+REM æ£€æŸ¥æ˜¯å¦æä¾›äº†è¾“å…¥æ–‡ä»¶
 
 if "%~dpnx1" == "" (
-    echo ÓÃ·¨: %0 ^<ÊÓÆµÎÄ¼şÂ·¾¶^>
+    echo ç”¨æ³•: %0 ^<è§†é¢‘æ–‡ä»¶è·¯å¾„^>
     pause
     exit /b
 )
 
 for %%i in (%*) do (
-    REM ½øÈëÎÄ¼şËùÔÚÎÄ¼ş¼Ğ
+    REM è¿›å…¥æ–‡ä»¶æ‰€åœ¨æ–‡ä»¶å¤¹
     cd "%%~dpi"
 
-    REM ÌáÈ¡ÊäÈëÊÓÆµÎÄ¼şµÄÎÄ¼şÃûºÍÀ©Õ¹Ãû
+    REM æå–è¾“å…¥è§†é¢‘æ–‡ä»¶çš„æ–‡ä»¶åå’Œæ‰©å±•å
     set "input_file=%%~dpnxi"
     set "file_name=%%~ni"
     set "file_extension=%%~xi"
 
-    REM ¹¹½¨×ÖÄ»ÎÄ¼şÂ·¾¶
+    REM æ„å»ºå­—å¹•æ–‡ä»¶è·¯å¾„
     set "subtitle_file=!file_name!.srt"
 
-    REM ¼ì²é×ÖÄ»ÎÄ¼şÊÇ·ñ´æÔÚ
+    REM æ£€æŸ¥å­—å¹•æ–‡ä»¶æ˜¯å¦å­˜åœ¨
     if not exist "!subtitle_file!" (
-        echo Î´ÕÒµ½×ÖÄ»ÎÄ¼ş: !subtitle_file!
+        echo æœªæ‰¾åˆ°å­—å¹•æ–‡ä»¶: !subtitle_file!
         pause
         exit /b
     )
 
-    REM ¹¹½¨Êä³öÎÄ¼şÂ·¾¶
+    REM æ„å»ºè¾“å‡ºæ–‡ä»¶è·¯å¾„
     set "output_file=!file_name!_with_subtitles.mp4"
 
-    REM Ê¹ÓÃ ffmpeg ½«×ÖÄ»Ç¶Èëµ½ÊÓÆµÖĞ
+    REM ä½¿ç”¨ ffmpeg å°†å­—å¹•åµŒå…¥åˆ°è§†é¢‘ä¸­
     ffmpeg -i "!input_file!" -vf subtitles="!subtitle_file!" -c:a copy "!output_file!"
 
-    echo ×ÖÄ»ÒÑ³É¹¦Ç¶Èëµ½ÊÓÆµÖĞ£¬Êä³öÎÄ¼şÎª: !output_file!
+    echo å­—å¹•å·²æˆåŠŸåµŒå…¥åˆ°è§†é¢‘ä¸­ï¼Œè¾“å‡ºæ–‡ä»¶ä¸º: !output_file!
 
     endlocal
 )

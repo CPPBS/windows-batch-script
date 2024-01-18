@@ -1,8 +1,8 @@
-@echo off
+﻿@echo off
 
-:: ���ߣ���˧����
-:: ���ڣ�2021 �� 2 �� 10 ��
-:: ���д˽ű���Ҫ��ȷ����װ�У�pngquant
+:: 作者：淳帅二代
+:: 日期：2021 年 2 月 10 日
+:: 运行此脚本需要先确保安装有：pngquant
 
 for %%i in (%*) do (
 	if /i %%~xi==.png (

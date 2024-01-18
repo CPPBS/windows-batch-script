@@ -1,20 +1,20 @@
-@echo off
+ï»¿@echo off
 
-echo %%1     ÍêÕûÂ·¾¶,´øÒýºÅ    %1
-echo %%~1    ²»´øÒýºÅÂ·¾¶       %~1
-echo %%~f1   ÍêÈ«ºÏ¸ñÂ·¾¶       %~f1 
-echo %%~d1   Çý¶¯Æ÷ºÅ           %~d1 
-echo %%~p1   Â·¾¶               %~p1 
-echo %%~n1   ÎÄ¼þÃû             %~n1 
-echo %%~x1   ÎÄ¼þÀ©Õ¹Ãû         %~x1 
-echo %%~s1   º¬ÓÐ¶ÌÃû           %~s1 
-echo %%~a1   ÎÄ¼þÊôÐÔ           %~a1 
-echo %%~t1   ÈÕÆÚ/Ê±¼ä          %~t1 
-echo %%~z1   ÎÄ¼þ´óÐ¡           %~z1 
-echo %%~$PATH:1 À©³ä»·¾³±äÁ¿  %~$PATH:1
+echo %%1     å®Œæ•´è·¯å¾„,å¸¦å¼•å·    %1
+echo %%~1    ä¸å¸¦å¼•å·è·¯å¾„       %~1
+echo %%~f1   å®Œå…¨åˆæ ¼è·¯å¾„       %~f1 
+echo %%~d1   é©±åŠ¨å™¨å·           %~d1 
+echo %%~p1   è·¯å¾„               %~p1 
+echo %%~n1   æ–‡ä»¶å             %~n1 
+echo %%~x1   æ–‡ä»¶æ‰©å±•å         %~x1 
+echo %%~s1   å«æœ‰çŸ­å           %~s1 
+echo %%~a1   æ–‡ä»¶å±žæ€§           %~a1 
+echo %%~t1   æ—¥æœŸ/æ—¶é—´          %~t1 
+echo %%~z1   æ–‡ä»¶å¤§å°           %~z1 
+echo %%~$PATH:1 æ‰©å……çŽ¯å¢ƒå˜é‡  %~$PATH:1
 
 for %%i in (%*) do (
-	echo ÅÌ·ûºÍÂ·¾¶£º %%~dpi
+	echo ç›˜ç¬¦å’Œè·¯å¾„ï¼š %%~dpi
 )
 
 pause

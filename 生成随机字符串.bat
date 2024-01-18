@@ -1,21 +1,21 @@
-rem Éú³É3¸öËæ»ú×Ö·û´®
+ï»¿rem ç”Ÿæˆ3ä¸ªéšæœºå­—ç¬¦ä¸²
 @echo off
 set n=3
-rem n=3ÒâË¼ÒªÉú³É3¸öËæ»ú×Ö·û´®£¬ÈçÒª10¸öÐÞ¸Än=10
+rem n=3æ„æ€è¦ç”Ÿæˆ3ä¸ªéšæœºå­—ç¬¦ä¸²ï¼Œå¦‚è¦10ä¸ªä¿®æ”¹n=10
 setlocal enabledelayedexpansion
-rem ¿ªÆô±äÁ¿ÑÓ³Ù
+rem å¼€å¯å˜é‡å»¶è¿Ÿ
 set str=abcdefghijklmnopqrstuvwxyz0123456789
 for /l %%a in (1,1,%n%) do call :slz "%%a"
-rem forÑ­»·n´Î£¬ÒòÎªÃ¿Ñ­»·Ò»´ÎµÃµ½1¸öËæ»ú×Ö·û´®£¬n´Î±ãÊÇn¸öËæ»ú×Ö·û´®
+rem forå¾ªçŽ¯næ¬¡ï¼Œå› ä¸ºæ¯å¾ªçŽ¯ä¸€æ¬¡å¾—åˆ°1ä¸ªéšæœºå­—ç¬¦ä¸²ï¼Œnæ¬¡ä¾¿æ˜¯nä¸ªéšæœºå­—ç¬¦ä¸²
 echo %random_str%
 
 goto end
 :slz
 if "%~1"=="" goto:eof
 set /a r=%random%%%36
-rem Éú³ÉÐ¡ÓÚ36µÄËæ»úÊý(26¸ö×ÖÄ¸¼Ó10¸öÊý×ÖµÈÓÚ36ºÜºÃÀí½âµÄ)
+rem ç”Ÿæˆå°äºŽ36çš„éšæœºæ•°(26ä¸ªå­—æ¯åŠ 10ä¸ªæ•°å­—ç­‰äºŽ36å¾ˆå¥½ç†è§£çš„)
 set random_str=%random_str%!str:~%r%,1!
-rem ×Ö·û±äÁ¿½ØÈ¡¼°ºÏ²¢£¬Õâ¸öÒªÓÐÒ»¶¨µÄÅú´¦Àí¹¦µ×²ÅÄÜ¿´¶®£¬£¨°Ù¶È»ògoogle¹Ø¼ü´Ê¡°Àí½â×Ö·û½ØÈ¡¹¦ÄÜ¡±£©
+rem å­—ç¬¦å˜é‡æˆªå–åŠåˆå¹¶ï¼Œè¿™ä¸ªè¦æœ‰ä¸€å®šçš„æ‰¹å¤„ç†åŠŸåº•æ‰èƒ½çœ‹æ‡‚ï¼Œï¼ˆç™¾åº¦æˆ–googleå…³é”®è¯â€œç†è§£å­—ç¬¦æˆªå–åŠŸèƒ½â€ï¼‰
 EXIT /B 0
 
 :end

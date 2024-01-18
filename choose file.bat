@@ -1,4 +1,4 @@
-<# : chooser.bat
+﻿<# : chooser.bat
 :: launches a File... Open sort of file chooser and outputs choice(s) to the console
 :: https://stackoverflow.com/a/15885133/1683264
 
